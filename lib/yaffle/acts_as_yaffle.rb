@@ -11,6 +11,10 @@ module Yaffle
         self.yaffle_text_field = (options[:yaffle_text_field] || :last_squawk)
       end
     end
+
+    def squawk(string)
+      write_attribute(self.class.yaffle_text_field, string.to_squawk)
+    end
   end
 end
 
